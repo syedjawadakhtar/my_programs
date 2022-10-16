@@ -27,8 +27,8 @@ if __name__ == '__main__':
 
     #We only need sensor settings
     if config_object['EgoVehicleInfo']['SensorSettingsWithNames']:
-        string = config_object.get('EgoVehicleInfo', 'SensorSettingsWithNames').strip().split('\n')
-        print(string.find("SocketIp"))
+        String = config_object.get('EgoVehicleInfo', 'SensorSettingsWithNames').strip().split('\n')
+        print("SocketIP" in String)
         # list_in_list = ast.literal_eval(config_object['EgoVehicleInfo']['SensorSettingsWithNames'])
         # print(list_in_list)
 
