@@ -7,17 +7,18 @@ import sys
 import ast
 
 if __name__ == '__main__':
-    config_object = ConfigParser(allow_no_value=True)
-    config_object.sections()
+    config = ConfigParser(allow_no_value=True)
+    config.sections()
 
-    # python ModifyConfigFile.py filname [sensor_index] newIP
+    # cmdline >>python ModifyConfigFile.py filname [sensor_index] newIP
     filename = sys.argv[1]
     sensor_index = sys.argv[2]
     newIP = sys.argv[3]
     
     #Read OriginalControls.ini
-    config_object.read(filename)
+    config.read(filename)
 
+    fullIp = "SockerIp"+newIP
 
     # if sensor_index == nan:
     #     for i in range (10+1):
@@ -26,9 +27,16 @@ if __name__ == '__main__':
     #     [sensor_index].SocketIP = newIP
 
     #We only need sensor settings
-    if config_object['EgoVehicleInfo']['SensorSettingsWithNames']:
-        String = config_object.get('EgoVehicleInfo', 'SensorSettingsWithNames').strip().split('\n')
-        print("SocketIP" in String)
+    SensorSettingsWithNames = config['EgoVehicleInfo']['SensorSettingsWithNames']
+    
+    # When no index is mentioned in the input
+    if(sensor_index == ""):
+        SensorSettingsWithNames.replace("SocketIp:0.0.0.0", fullIp)
+    
+    
+    # if config_object['EgoVehicleInfo']['SensorSettingsWithNames']:
+    #     string = config_object.get('EgoVehicleInfo', 'SensorSettingsWithNames').strip().split('\n')
+    #     print(string.find("SocketIp"))
         # list_in_list = ast.literal_eval(config_object['EgoVehicleInfo']['SensorSettingsWithNames'])
         # print(list_in_list)
 
