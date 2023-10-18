@@ -1,4 +1,4 @@
-# Windows Forms using C#
+# Windows Forms using .NET and C#
 
 
 | ![times_up.png](imgs/times_up.png) | ![completed.png](imgs/completed.png) |
