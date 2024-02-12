@@ -1,6 +1,6 @@
 [submodule "rust_learn/guessing_game"]
 	path = rust_learn/guessing_game
-	url = https://github.com/syedjawadakhtar/my_programs.git
+	url = https://github.com/syedjawadakhtar/my_programs/rust_learn/guessing_game
 [submodule "rust_learn/hello_world/hello_cargo"]
 	path = rust_learn/hello_world/hello_cargo
-	url = https://github.com/syedjawadakhtar/my_programs.git
+	url = https://github.com/syedjawadakhtar/my_programs/rust_learn/hello_world/hello_cargo
